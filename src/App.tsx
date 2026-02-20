@@ -8,6 +8,9 @@ function App() {
       <p className="read-the-docs">
         Subscription Black Hole
       </p>
+      <div className="card">
+        ☀️
+      </div>
     </div>
     </>
   )
