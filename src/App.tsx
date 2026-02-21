@@ -1,4 +1,5 @@
 import './App.css'
+import Animation from './components/SolarSystem'
 
 function App() {
 
