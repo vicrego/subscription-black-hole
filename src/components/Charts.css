@@ -1,0 +1,134 @@
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.chart {
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(20, 20, 40, 0.5);
+}
+
+.chart h3 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pie-svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.legend-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.legend-label {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.legend-value {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Bar Chart */
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.bar-name {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.bar-value {
+  color: #ff6b9d;
+  font-weight: bold;
+}
+
+.bar-wrapper {
+  width: 100%;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bar {
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(255, 107, 157, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.bar-item:hover .bar {
+  box-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .chart {
+    padding: 20px;
+  }
+
+  .chart h3 {
+    font-size: 16px;
+  }
+}
