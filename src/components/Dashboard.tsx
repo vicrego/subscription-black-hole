@@ -3,6 +3,7 @@ import SummaryCards from './SummaryCards';
 
 import Charts from './Charts';
 import SubscriptionList from './SubscriptionList';
+import { Animation } from './solarSystem/SolarSystem';
 import type { Subscription } from '../types';
 import './Dashboard.css';
 
@@ -31,9 +32,9 @@ const Dashboard: React.FC<DashboardProps> = ({ subscriptions }) => {
         {/* Black hole visualization */}
         <section className="visualization-section">
           <h2 className="section-title">Financial Gravity Well</h2>
-          {/* <div className="visualization-wrapper">
-            <BlackHoleVisualization subscriptions={subscriptions} />
-          </div> */}
+          <div className="visualization-wrapper">
+            <Animation/>
+          </div>
         </section>
 
         {/* Charts */}
