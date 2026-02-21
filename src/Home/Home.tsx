@@ -9,7 +9,7 @@ const Menu = () => {
             <p className="writing">
                 Welcome to the Subscription Black Hole! This is a place where you can view all your subscriptions in space and manage them easily.
             </p>
-            <button className="button" onClick={() => navigate('/upload')}>
+            <button className="button" onClick={() => navigate('/subscriptions-solar-system')}>
                 Upload statement to get started
             </button>
         </div>
