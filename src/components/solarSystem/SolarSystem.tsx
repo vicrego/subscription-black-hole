@@ -1,58 +1,37 @@
 
-import React, { useState, useEffect } from 'react';
-import { motion, type Transition } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import './SolarSystem.css';
 
-
-const Animation = () => {
-  const [isStuck, setIsStuck] = useState(false);
-
-
- const orbitTransition = (duration: number): Transition => ({
-  duration: isStuck ? duration * 10 : duration,
-  repeat: Infinity,
-  ease: "linear",
-});
-  
+export const Animation = () => {
+  // A Fibonacci-style spiral uses the formula: r = a * e^(b * angle)
+  // We'll simulate this by animating 'scale' and 'rotate' simultaneously
   
   return (
-    <div className="space">
-      {/* THE SUN */}
-      <div className="sun" onClick={() => setIsStuck(!isStuck)}></div>
+    <div className="space-container">
+      {/* THE BLACK HOLE */}
+      <div className="black-hole">
+        <div className="event-horizon"></div>
+      </div>
 
-      {/* EARTH ORBIT */}
-      <motion.div 
-        className="orbit earth-orbit"
-        animate={{ rotate: 360 }}
-        transition={orbitTransition(10)}
+      {/* THE CHARACTER / TRANSACTION */}
+      <motion.div
+        className="character-wrapper"
+        animate={{ 
+          rotate: [0, 1440], // Multiple full rotations
+          scale: [1, 0],     // Shrinks as it hits the center
+        }}
+        transition={{ 
+          duration: 10, 
+          repeat: Infinity, 
+          ease: "easeIn" // Gets faster as it gets closer
+        }}
       >
-        <div className="planet earth">
-          {/* MOON (Nested inside Earth) */}
-          <motion.div 
-            className="orbit moon-orbit"
-            animate={{ rotate: 360 }}
-            transition={orbitTransition(3)}
-          >
-            <div className="planet moon"></div>
-          </motion.div>
+        <div className="character">
+          👨‍🚀
+          <span className="cost-tag">-$14.99</span>
         </div>
       </motion.div>
-
-      {/* MARS ORBIT */}
-      <motion.div 
-        className="orbit mars-orbit"
-        animate={{ rotate: 360 }}
-        transition={orbitTransition(10)}
-      >
-        <div className="planet mars"></div>
-      </motion.div>
-
-      
     </div>
   );
 };
-
-
-export default Animation
-
-

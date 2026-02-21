@@ -1,5 +1,6 @@
 import './App.css'
-import Animation from './components/SolarSystem'
+import { Animation } from './components/solarSystem/SolarSystem'
+
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <p className="read-the-docs">
         Subscription Black Hole
       </p>
+      <Animation/>
     </div>
     </>
   )
